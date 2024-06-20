@@ -13,7 +13,7 @@ server.use(morgan("combined"));
 server.use(middlewares);
 
 // Custom endpoint to check for updates
-server.get("/check-update", async (req, res) => {
+server.get("/check-update", async (_req, res) => {
   try {
     const message = await checkAndUpdateDatabase();
     res.status(200).json({ message });

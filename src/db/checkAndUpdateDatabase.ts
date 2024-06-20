@@ -14,21 +14,19 @@ type WantedListParams = {
 
 type Category =
   | "ten_most_wanted"
-  | "fugitives"
-  | "capitol_violence"
-  | "terrorism"
-  | "kidnappings_missing_persons"
-  | "parental_kidnappings"
-  | "seeking_info";
+  | "wanted"
+  | "terrorist"
+  | "seeking_information"
+  | "kidnappings"
+  | "missing_persons";
 
 interface Database {
   ten_most_wanted: any[];
-  fugitives: any[];
-  capitol_violence: any[];
-  terrorism: any[];
-  kidnappings_missing_persons: any[];
-  parental_kidnappings: any[];
-  seeking_info: any[];
+  wanted: any[];
+  terrorist: any[];
+  seeking_information: any[];
+  kidnappings: any[];
+  missing_persons: any[];
   updatedAt: {
     date: string;
   };
@@ -36,12 +34,11 @@ interface Database {
 
 const CATEGORIES: Record<Category, string> = {
   ten_most_wanted: "ten",
-  fugitives: "fugitive",
-  capitol_violence: "capitol_violence",
-  terrorism: "terrorism",
-  kidnappings_missing_persons: "kidnapping_missing",
-  parental_kidnappings: "parental_kidnapping",
-  seeking_info: "seeking_info",
+  wanted: "default",
+  terrorist: "terrorist",
+  seeking_information: "information",
+  kidnappings: "kidnapping",
+  missing_persons: "missing",
 };
 
 /**
@@ -120,9 +117,9 @@ async function checkAndUpdateDatabase(): Promise<string> {
       }
 
       await writeDatabase(dbPath, updatedDb);
-      return "Database updated successfully";
+      return `Database updated successfully at ${updatedDb.updatedAt.date}`;
     } else {
-      return "Database is up-to-date";
+      return `Database is up-to-date as of ${db.updatedAt.date}`;
     }
   } catch (error) {
     console.error("Error checking or updating database:", error);

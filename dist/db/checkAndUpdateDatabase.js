@@ -4,12 +4,11 @@ import path from "path";
 const BASE_FBI_URI = "https://api.fbi.gov/@wanted";
 const CATEGORIES = {
     ten_most_wanted: "ten",
-    fugitives: "fugitive",
-    capitol_violence: "capitol_violence",
-    terrorism: "terrorism",
-    kidnappings_missing_persons: "kidnapping_missing",
-    parental_kidnappings: "parental_kidnapping",
-    seeking_info: "seeking_info",
+    wanted: "default",
+    terrorist: "terrorist",
+    seeking_information: "information",
+    kidnappings: "kidnapping",
+    missing_persons: "missing",
 };
 async function fetchWantedList(params) {
     const { pageSize, page, sort_on, sort_order, poster_classification } = params;
@@ -55,10 +54,10 @@ async function checkAndUpdateDatabase() {
                 }
             }
             await writeDatabase(dbPath, updatedDb);
-            return "Database updated successfully";
+            return `Database updated successfully at ${updatedDb.updatedAt.date}`;
         }
         else {
-            return "Database is up-to-date";
+            return `Database is up-to-date as of ${db.updatedAt.date}`;
         }
     }
     catch (error) {
