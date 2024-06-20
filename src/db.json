@@ -1,7 +1,5 @@
 {
-  "updatedAt": {
-    "date": "2024-06-20T00:39:18.247Z"
-  },
+  "updatedAt": "2024-06-20T05:23:20.483Z",
   "ten_most_wanted": [
     {
       "weight_max": 225,
@@ -112,7 +110,8 @@
       "path": "/wanted/topten/arnoldo-jimenez",
       "remarks": "<p>Jimenez may have fled to Durango, Mexico, specifically in the area of Santiago Papasquiaro. He may also frequent Reynosa, Tamaulipas, Mexico. He has previously resided in Chicago, Illinois.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/960400943f3b4846a1835da26d58b885"
+      "@id": "https://api.fbi.gov/@wanted-person/960400943f3b4846a1835da26d58b885",
+      "id": "e88caa6f-dfa4-4a55-a5f0-83fb22f4d5de"
     },
     {
       "weight_max": 150,
@@ -204,7 +203,8 @@
       "path": "/wanted/topten/vitelhomme-innocent",
       "remarks": null,
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/a6cb163f93fc40e6ad3d528ce53bc740"
+      "@id": "https://api.fbi.gov/@wanted-person/a6cb163f93fc40e6ad3d528ce53bc740",
+      "id": "04909321-dd44-4a47-8d6d-f798492989c5"
     },
     {
       "weight_max": 300,
@@ -300,7 +300,8 @@
       "path": "/wanted/topten/omar-alexander-cardenas",
       "remarks": "<p>Cardenas often has a beard and wears prescription glasses.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/5b2cc53a060b47c0af3dba28edd6a085"
+      "@id": "https://api.fbi.gov/@wanted-person/5b2cc53a060b47c0af3dba28edd6a085",
+      "id": "f3b22364-92cc-422e-ba43-3b7e926ffb47"
     },
     {
       "weight_max": 190,
@@ -391,7 +392,8 @@
       "path": "/wanted/topten/wilver-villegas-palomino",
       "remarks": null,
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/7dfc149563914609928516b895ad5d4e"
+      "@id": "https://api.fbi.gov/@wanted-person/7dfc149563914609928516b895ad5d4e",
+      "id": "3b2b01ac-bead-4a0a-bb3a-f2daafdf430c"
     },
     {
       "weight_max": null,
@@ -510,7 +512,8 @@
       "path": "/wanted/topten/ruja-ignatova",
       "remarks": "<p>Ignatova is believed to travel with armed guards and/or associates. Ignatova may have had plastic surgery or otherwise altered her appearance.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/fc301524ae95402685af25b457475a90"
+      "@id": "https://api.fbi.gov/@wanted-person/fc301524ae95402685af25b457475a90",
+      "id": "2a1c3c67-9adc-4e47-96c6-a0261001cbbe"
     },
     {
       "weight_max": 165,
@@ -640,7 +643,8 @@
       "path": "/wanted/topten/bhadreshkumar-chetanbhai-patel",
       "remarks": "<p>Patel was last known to be in the Newark, New Jersey, area.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/8cb3b0fd2e4a4bbc9518f9b389a0a909"
+      "@id": "https://api.fbi.gov/@wanted-person/8cb3b0fd2e4a4bbc9518f9b389a0a909",
+      "id": "35764e25-1939-4ec4-9e5c-c1a44f87d536"
     },
     {
       "weight_max": 190,
@@ -734,7 +738,8 @@
       "path": "/wanted/topten/alejandro-castillo",
       "remarks": "<p>Castillo's last known residence was in Charlotte, North Carolina. He has ties to Phoenix, Arizona. Castillo was seen crossing into Mexico and may reside in San Francisco de los Romo, Aguascalientes, or Pabellón de Arteaga, Aguascalientes. He also may have traveled to the Mexican states of Guanajuato or Veracruz.</p>\r\n<p> </p>\r\n<p>He may wear his hair short and shaved on the sides.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/edf33cb9deed48cf8aedd99d9c81ed98"
+      "@id": "https://api.fbi.gov/@wanted-person/edf33cb9deed48cf8aedd99d9c81ed98",
+      "id": "7bd58845-691f-4168-9e40-9811524f9a0c"
     },
     {
       "weight_max": 140,
@@ -859,7 +864,8 @@
       "path": "/wanted/topten/alexis-flores",
       "remarks": "<p>Flores has ties to Honduras.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/e7f20911d79cbe33ed9ffbfad9f39669"
+      "@id": "https://api.fbi.gov/@wanted-person/e7f20911d79cbe33ed9ffbfad9f39669",
+      "id": "b1054966-51a4-4f88-96f9-d62362ba586a"
     },
     {
       "weight_max": 235,
@@ -969,7 +975,8 @@
       "path": "/wanted/topten/donald-eugene-fields-ii",
       "remarks": "<p>Donald Eugene Fields II was last known to reside in Franklin County, Missouri. He has family in Missouri and Kentucky. He is known to visit casinos and has traveled to Florida in the past.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/a0b219b08a0d4709b21e265466c48bb8"
+      "@id": "https://api.fbi.gov/@wanted-person/a0b219b08a0d4709b21e265466c48bb8",
+      "id": "480d4c18-469f-402b-a946-5d2c639aad45"
     },
     {
       "weight_max": 160,
@@ -1068,7 +1075,8 @@
       "path": "/wanted/topten/yulan-adonay-archaga-carias",
       "remarks": "<p>Archaga Carias is believed to only speak Spanish.</p>",
       "coordinates": [],
-      "@id": "https://api.fbi.gov/@wanted-person/d078deee25ea4b9aa6f4ac4a681e2f65"
+      "@id": "https://api.fbi.gov/@wanted-person/d078deee25ea4b9aa6f4ac4a681e2f65",
+      "id": "a91fc707-5005-416d-b3e4-648a629353bc"
     }
   ],
   "wanted": [
@@ -9756,5 +9764,11 @@
       "coordinates": [],
       "@id": "https://api.fbi.gov/@wanted-person/e85909402d754d0685620b2a97bc0d78"
     }
-  ]
+  ],
+  "fugitives": [],
+  "capitol_violence": [],
+  "terrorism": [],
+  "kidnappings_missing_persons": [],
+  "parental_kidnappings": [],
+  "seeking_info": []
 }
