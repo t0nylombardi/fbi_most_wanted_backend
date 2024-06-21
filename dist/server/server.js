@@ -1,16 +1,14 @@
 import jsonServer from "json-server";
 import morgan from "morgan";
-import { readDatabase } from "../db/database.js";
-import { checkAndUpdateDatabase } from "../db/updateLogic.js";
+import { checkAndUpdateDatabase } from "../db/updateDatabase.js";
 const server = jsonServer.create();
 const router = jsonServer.router("src/db.json");
 const middlewares = jsonServer.defaults();
-server.use(morgan("combined"));
+server.use(morgan("tiny"));
 server.use(middlewares);
 server.get("/check-update", async (_req, res) => {
     try {
-        const db = await readDatabase();
-        const message = await checkAndUpdateDatabase(db);
+        const message = await checkAndUpdateDatabase();
         console.log(message);
         res.status(200).json({ message });
     }
@@ -21,10 +19,9 @@ server.get("/check-update", async (_req, res) => {
 });
 server.get("/update-database", async (_req, res) => {
     try {
-        const db = await readDatabase();
-        const message = await checkAndUpdateDatabase(db, true);
+        const message = await checkAndUpdateDatabase(true);
         console.log(message);
-        res.status(200).json({ message: "Database updated successfully" });
+        res.status(200).json({ message });
     }
     catch (error) {
         console.error(error);

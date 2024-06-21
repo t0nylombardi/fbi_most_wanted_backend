@@ -7,7 +7,9 @@ interface Database {
     parental_kidnappings: any[];
     seeking_info: any[];
     case_of_the_week?: any;
-    updatedAt: string;
+    updatedAt: {
+        date: string;
+    };
 }
 export declare function readDatabase(): Promise<Database>;
 export declare function writeDatabase(data: Database): Promise<void>;

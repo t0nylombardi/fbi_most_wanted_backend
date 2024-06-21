@@ -1,14 +1,13 @@
 import jsonServer from "json-server";
 import morgan from "morgan";
-import { readDatabase } from "../db/database.js";
-import { checkAndUpdateDatabase } from "../db/updateLogic.js";
+import { checkAndUpdateDatabase } from "../db/updateDatabase.js";
 
 const server = jsonServer.create();
 const router = jsonServer.router("src/db.json");
 const middlewares = jsonServer.defaults();
 
 // Setup the logger
-server.use(morgan("combined"));
+server.use(morgan("tiny"));
 
 // Use default middlewares (logger, static, cors, and no-cache)
 server.use(middlewares);
@@ -16,8 +15,7 @@ server.use(middlewares);
 // Endpoint to check for updates
 server.get("/check-update", async (_req, res) => {
   try {
-    const db = await readDatabase();
-    const message = await checkAndUpdateDatabase(db);
+    const message = await checkAndUpdateDatabase();
     console.log(message);
     res.status(200).json({ message });
   } catch (error) {
@@ -29,10 +27,9 @@ server.get("/check-update", async (_req, res) => {
 // Endpoint to update database anytime
 server.get("/update-database", async (_req, res) => {
   try {
-    const db = await readDatabase();
-    const message = await checkAndUpdateDatabase(db, true); // Force update
+    const message = await checkAndUpdateDatabase(true); // Force update
     console.log(message);
-    res.status(200).json({ message: "Database updated successfully" });
+    res.status(200).json({ message });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });

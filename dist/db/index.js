@@ -1,3 +1,3 @@
 export * from "./database.js";
-export * from "./updateLogic.js";
+export * from "./updateDatabase.js";
 //# sourceMappingURL=index.js.map

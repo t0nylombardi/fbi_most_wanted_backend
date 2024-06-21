@@ -1,0 +1,1 @@
+{"version":3,"file":"categories.js","sourceRoot":"","sources":["../../src/constants/categories.ts"],"names":[],"mappings":"AAAA,MAAM,CAAC,MAAM,UAAU,GAA2B;IAChD,eAAe,EAAE,KAAK;IACtB,MAAM,EAAE,SAAS;IACjB,SAAS,EAAE,WAAW;IACtB,eAAe,EAAE,SAAS;IAC1B,WAAW,EAAE,YAAY;IACzB,YAAY,EAAE,aAAa;CAC5B,CAAC"}
