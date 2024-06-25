@@ -1,10 +1,8 @@
-type WantedListParams = {
+export declare function fetchWantedList(params: {
     pageSize: number;
     page: number;
     sort_on: string;
     sort_order: string;
     poster_classification: string;
-    status: string;
-};
-export declare function fetchWantedList(params: WantedListParams): Promise<any>;
-export {};
+    status?: string;
+}): Promise<any>;

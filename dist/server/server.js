@@ -1,6 +1,6 @@
 import jsonServer from "json-server";
 import morgan from "morgan";
-import { checkAndUpdateDatabase } from "../db/updateDatabase.js";
+import { updateDatabase } from "../db/updateDatabase.js";
 const server = jsonServer.create();
 const router = jsonServer.router("src/db.json");
 const middlewares = jsonServer.defaults();
@@ -8,7 +8,7 @@ server.use(morgan("combined"));
 server.use(middlewares);
 server.get("/check-update", async (_req, res) => {
     try {
-        const message = await checkAndUpdateDatabase();
+        const message = await updateDatabase(false);
         console.log(message);
         res.status(200).json({ message });
     }
@@ -19,7 +19,7 @@ server.get("/check-update", async (_req, res) => {
 });
 server.get("/update-database", async (_req, res) => {
     try {
-        const message = await checkAndUpdateDatabase(true);
+        const message = await updateDatabase(true);
         console.log(message);
         res.status(200).json({ message });
     }
@@ -28,11 +28,11 @@ server.get("/update-database", async (_req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 });
-const handleCrudUpdate = async (req, res, next) => {
+const handleCrudUpdate = async (req, _res, next) => {
     if (["POST", "PUT", "PATCH", "DELETE"].includes(req.method)) {
         try {
-            const message = await checkAndUpdateDatabase(true);
-            console.log("Database updated after CRUD operation:", message);
+            await updateDatabase(true);
+            console.log("Database updated after CRUD operation");
         }
         catch (error) {
             console.error("Error updating database after CRUD operation:", error);

@@ -1,1 +1,1 @@
-export declare function checkAndUpdateDatabase(forceUpdate?: boolean): Promise<string>;
+export declare function updateDatabase(forceUpdate?: boolean): Promise<string>;

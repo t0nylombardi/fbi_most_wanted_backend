@@ -1,6 +1,6 @@
 import jsonServer from "json-server";
 import morgan from "morgan";
-import { checkAndUpdateDatabase } from "../db/updateDatabase.js";
+import { updateDatabase } from "../db/updateDatabase.js";
 
 const server = jsonServer.create();
 const router = jsonServer.router("src/db.json");
@@ -15,7 +15,7 @@ server.use(middlewares);
 // Endpoint to check for updates
 server.get("/check-update", async (_req, res) => {
   try {
-    const message = await checkAndUpdateDatabase();
+    const message = await updateDatabase(false); // Do not force update
     console.log(message);
     res.status(200).json({ message });
   } catch (error) {
@@ -24,10 +24,10 @@ server.get("/check-update", async (_req, res) => {
   }
 });
 
-// Endpoint to update database anytime
+// Endpoint to force update database anytime
 server.get("/update-database", async (_req, res) => {
   try {
-    const message = await checkAndUpdateDatabase(true); // Force update
+    const message = await updateDatabase(true); // Force update
     console.log(message);
     res.status(200).json({ message });
   } catch (error) {
@@ -37,11 +37,11 @@ server.get("/update-database", async (_req, res) => {
 });
 
 // Middleware to handle CRUD operations and update the database
-const handleCrudUpdate = async (req: any, res: any, next: any) => {
+const handleCrudUpdate = async (req, _res, next) => {
   if (["POST", "PUT", "PATCH", "DELETE"].includes(req.method)) {
     try {
-      const message = await checkAndUpdateDatabase(true); // Force update
-      console.log("Database updated after CRUD operation:", message);
+      await updateDatabase(true); // Force update
+      console.log("Database updated after CRUD operation");
     } catch (error) {
       console.error("Error updating database after CRUD operation:", error);
     }

@@ -1,13 +1,10 @@
 /**
- * Determines if the database is outdated.
- * @param updatedAt - The last update time of the database.
- * @returns True if the database is outdated, false otherwise.
+ * Checks if the given date is older than one day from now.
+ * @param updatedAt - The date to check.
+ * @returns True if the date is older than one day, false otherwise.
  */
 export function isDatabaseOutdated(updatedAt: Date): boolean {
-  // return if updatedAt is null
-  if (!updatedAt) return false;
-
   const now = new Date();
   const oneDayInMs = 24 * 60 * 60 * 1000;
-  return now.getTime() - new Date(updatedAt).getTime() > oneDayInMs;
+  return now.getTime() - updatedAt.getTime() > oneDayInMs;
 }

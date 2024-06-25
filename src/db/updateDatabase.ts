@@ -6,10 +6,63 @@ import { v4 as uuidv4 } from "uuid";
 import { isDatabaseOutdated } from "../utils/dateUtils.js";
 
 /**
- * Fetches data for a specific category.
- * @param category - The category to fetch data for.
+ * Checks if the database should be updated based on the last update time.
+ * @param db - The current database state.
+ * @param forceUpdate - Whether to force update the database.
+ * @returns True if the database should be updated, false otherwise.
+ */
+async function shouldUpdateDatabase(
+  db: any,
+  forceUpdate: boolean
+): Promise<boolean> {
+  if (
+    forceUpdate ||
+    !db.updatedAt ||
+    isDatabaseOutdated(new Date(db.updatedAt.date))
+  ) {
+    return true;
+  }
+  return false;
+}
+
+/**
+ * Performs the database update.
+ * @param db - The current database state.
+ * @returns A message indicating whether the update was successful.
+ */
+async function performDatabaseUpdate(db: any): Promise<string> {
+  let updatedDb = { ...db, updatedAt: { date: new Date().toISOString() } };
+
+  try {
+    const categoriesData = await updateAllCategories();
+    updatedDb = { ...updatedDb, ...categoriesData };
+  } catch (error) {
+    console.error("Error updating categories:", error);
+    throw new Error("Failed to update categories");
+  }
+
+  try {
+    updatedDb = await updateCaseOfTheWeek(updatedDb);
+  } catch (error) {
+    console.error("Error updating Case of the Week:", error);
+    throw new Error("Failed to update Case of the Week");
+  }
+
+  try {
+    await writeDatabase(updatedDb);
+    console.log("Database updated successfully");
+    return "Database updated successfully";
+  } catch (error) {
+    console.error("Error writing database:", error);
+    throw new Error("Failed to write the database");
+  }
+}
+
+/**
+ * Updates data for a specific category.
+ * @param category - The category to update.
  * @param poster_classification - The poster classification for the category.
- * @returns The fetched data with unique IDs added.
+ * @returns The updated data for the category.
  */
 async function updateCategoryData(
   category: string,
@@ -22,7 +75,6 @@ async function updateCategoryData(
       sort_on: "modified",
       sort_order: "desc",
       poster_classification,
-      status: "na",
     });
 
     return data.items.map((item: any) => ({
@@ -72,10 +124,10 @@ async function updateCaseOfTheWeek(db: any): Promise<any> {
 
 /**
  * Checks if the database is outdated and updates it if necessary.
- * @param forceUpdate - Whether to force update the database regardless of the last update time.
+ * @param forceUpdate - Whether to force update the database.
  * @returns A message indicating whether the database was updated or is up-to-date.
  */
-export async function checkAndUpdateDatabase(
+export async function updateDatabase(
   forceUpdate: boolean = false
 ): Promise<string> {
   let db;
@@ -86,38 +138,15 @@ export async function checkAndUpdateDatabase(
     throw new Error("Failed to read the database");
   }
 
-  // check to see if updatedAt is null, if so, set it to new Date and update the database, else check if the database is outdated
-  if (
-    !db.updatedAt ||
-    forceUpdate ||
-    isDatabaseOutdated(new Date(db.updatedAt.date))
-  ) {
+  const updateNeeded = await shouldUpdateDatabase(db, forceUpdate);
+  if (updateNeeded) {
     console.log("Database update requested or outdated. Fetching new data...");
-    console.log("Database update requested or outdated. Fetching new data...");
-
-    let updatedDb = { ...db, updatedAt: { date: new Date().toISOString() } };
     try {
-      const categoriesData = await updateAllCategories();
-      updatedDb = { ...updatedDb, ...categoriesData };
+      const message = await performDatabaseUpdate(db);
+      return message;
     } catch (error) {
-      console.error("Error updating categories:", error);
-      throw new Error("Failed to update categories");
-    }
-
-    try {
-      updatedDb = await updateCaseOfTheWeek(updatedDb);
-    } catch (error) {
-      console.error("Error updating Case of the Week:", error);
-      throw new Error("Failed to update Case of the Week");
-    }
-
-    try {
-      await writeDatabase(updatedDb);
-      console.log("Database updated successfully");
-      return "Database updated successfully";
-    } catch (error) {
-      console.error("Error writing database:", error);
-      throw new Error("Failed to write the database");
+      console.error("Error performing database update:", error);
+      throw new Error("Failed to update the database");
     }
   } else {
     console.log("Database is up-to-date");
