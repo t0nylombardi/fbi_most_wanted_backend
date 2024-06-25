@@ -7,7 +7,7 @@ const router = jsonServer.router("src/db.json");
 const middlewares = jsonServer.defaults();
 
 // Setup the logger
-server.use(morgan("tiny"));
+server.use(morgan("combined"));
 
 // Use default middlewares (logger, static, cors, and no-cache)
 server.use(middlewares);
@@ -35,6 +35,22 @@ server.get("/update-database", async (_req, res) => {
     res.status(500).json({ error: "Internal server error" });
   }
 });
+
+// Middleware to handle CRUD operations and update the database
+const handleCrudUpdate = async (req: any, res: any, next: any) => {
+  if (["POST", "PUT", "PATCH", "DELETE"].includes(req.method)) {
+    try {
+      const message = await checkAndUpdateDatabase(true); // Force update
+      console.log("Database updated after CRUD operation:", message);
+    } catch (error) {
+      console.error("Error updating database after CRUD operation:", error);
+    }
+  }
+  next();
+};
+
+// Use the CRUD update middleware before the router
+server.use(handleCrudUpdate);
 
 // Use the router
 server.use(router);
