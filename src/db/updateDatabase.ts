@@ -1,6 +1,7 @@
 import { readDatabase, writeDatabase } from "./database.js";
 import { fetchWantedList } from "../api/fbiApi.js";
 import { fetchCaseOfTheWeek } from "../api/caseOfTheWeek.js";
+import { fetchDefaultAllPages } from "../api/defaultAllPages.js";
 import { CATEGORIES } from "../constants/categories.js";
 import { v4 as uuidv4 } from "uuid";
 import { isDatabaseOutdated } from "../utils/dateUtils.js";
@@ -41,12 +42,12 @@ async function performDatabaseUpdate(db: any): Promise<string> {
     throw new Error("Failed to update categories");
   }
 
-  try {
-    updatedDb = await updateCaseOfTheWeek(updatedDb);
-  } catch (error) {
-    console.error("Error updating Case of the Week:", error);
-    throw new Error("Failed to update Case of the Week");
-  }
+  // try {
+  //   updatedDb = await updateDefaultAllPages(updatedDb);
+  // } catch (error) {
+  //   console.error("Error updating default all pages:", error);
+  //   throw new Error("Failed to update default all pages");
+  // }
 
   try {
     await writeDatabase(updatedDb);
@@ -70,7 +71,7 @@ async function updateCategoryData(
 ): Promise<any[]> {
   try {
     const data = await fetchWantedList({
-      pageSize: 20,
+      pageSize: 1000,
       page: 1,
       sort_on: "modified",
       sort_order: "desc",
@@ -121,6 +122,18 @@ async function updateCaseOfTheWeek(db: any): Promise<any> {
   }
   return db;
 }
+
+// async function updateDefaultAllPages(db: any): Promise<any> {
+//   const allPages = await fetchDefaultAllPages();
+//   if (!allPages) {
+//     console.error("Failed to fetch default");
+//     db.default_all_pages = [];
+//   } else {
+//     console.log("Fetched all pages");
+//     db.default_all_pages = [allPages];
+//   }
+//   return db;
+// }
 
 /**
  * Checks if the database is outdated and updates it if necessary.
