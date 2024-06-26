@@ -1,21 +1,13 @@
-import fs from "fs/promises";
+import { promises as fs } from "fs";
 import path from "path";
 
-const DB_PATH = path.resolve("src/db.json");
+const dbPath = path.resolve("src/db.json");
 
-/**
- * Reads the database from the file system.
- * @returns The database content.
- */
 export async function readDatabase(): Promise<any> {
-  const content = await fs.readFile(DB_PATH, "utf-8");
-  return JSON.parse(content);
+  const data = await fs.readFile(dbPath, "utf8");
+  return JSON.parse(data);
 }
 
-/**
- * Writes the database to the file system.
- * @param db - The database content.
- */
-export async function writeDatabase(db: any): Promise<void> {
-  await fs.writeFile(DB_PATH, JSON.stringify(db, null, 2));
+export async function writeDatabase(data: any): Promise<void> {
+  await fs.writeFile(dbPath, JSON.stringify(data, null, 2));
 }

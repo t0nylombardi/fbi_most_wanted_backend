@@ -1,11 +1,11 @@
-import fs from "fs/promises";
+import { promises as fs } from "fs";
 import path from "path";
-const DB_PATH = path.resolve("src/db.json");
+const dbPath = path.resolve("src/db.json");
 export async function readDatabase() {
-    const content = await fs.readFile(DB_PATH, "utf-8");
-    return JSON.parse(content);
+    const data = await fs.readFile(dbPath, "utf8");
+    return JSON.parse(data);
 }
-export async function writeDatabase(db) {
-    await fs.writeFile(DB_PATH, JSON.stringify(db, null, 2));
+export async function writeDatabase(data) {
+    await fs.writeFile(dbPath, JSON.stringify(data, null, 2));
 }
 //# sourceMappingURL=database.js.map
