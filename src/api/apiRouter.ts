@@ -1,16 +1,27 @@
 import express, { Request, Response, NextFunction } from "express";
 import { updateDatabase } from "../db/updateDatabase.js";
 import { readDatabase, writeDatabase } from "../db/database.js";
+import { fetchDefaultAllPages } from "../api/defaultAllPages.js";
+import { CATEGORIES } from "../constants/categories.js";
 import { v4 as uuidv4 } from "uuid";
 
 const apiRouter = express.Router();
 
 // Add a simple test endpoint
-apiRouter.get("/test", (req, res) => {
+apiRouter.get("/test", (req: Request, res: Response) => {
   res.send({ message: "Server is working xxxxx" });
 });
 
-apiRouter.get("/update", async (req, res) => {
+apiRouter.get("/default-all-pages", async (req: Request, res: Response) => {
+  try {
+    const db = await fetchDefaultAllPages();
+    res.json(db || []);
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+apiRouter.get("/update-database", async (req: Request, res: Response) => {
   try {
     const message = await updateDatabase(true); // Force update
     res.status(200).send({ message });

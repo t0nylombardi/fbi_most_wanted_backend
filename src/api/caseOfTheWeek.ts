@@ -6,7 +6,7 @@ export async function fetchCaseOfTheWeek(): Promise<any | null> {
   let caseOfTheWeek: any | null = null;
   while (!caseOfTheWeek) {
     const data = await fetchWantedList({
-      pageSize: 20,
+      pageSize: 1000,
       page,
       sort_on: "modified",
       sort_order: "desc",
