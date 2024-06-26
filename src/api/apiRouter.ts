@@ -5,6 +5,24 @@ import { v4 as uuidv4 } from "uuid";
 
 const apiRouter = express.Router();
 
+// Add a simple test endpoint
+apiRouter.get("/test", (req, res) => {
+  res.send({ message: "Server is working xxxxx" });
+});
+
+apiRouter.get("/update", async (req, res) => {
+  try {
+    const message = await updateDatabase(true); // Force update
+    res.status(200).send({ message });
+  } catch (error) {
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+apiRouter.get("/up", (req, res) => {
+  res.send({ message: "up" });
+});
+
 // CRUD operations for various categories
 apiRouter.get("/:category", async (req: Request, res: Response) => {
   try {
@@ -31,7 +49,9 @@ apiRouter.put("/:category/:id", async (req: Request, res: Response) => {
   try {
     const db = await readDatabase();
     const items = db[req.params.category];
-    const index = items.findIndex((item) => item.id === req.params.id);
+    const index = items.findIndex(
+      (item: { id: string }) => item.id === req.params.id
+    );
     if (index === -1) return res.status(404).json({ error: "Not found" });
     const updatedItem = { ...req.body, id: req.params.id };
     items[index] = updatedItem;
@@ -46,7 +66,9 @@ apiRouter.delete("/:category/:id", async (req: Request, res: Response) => {
   try {
     const db = await readDatabase();
     const items = db[req.params.category];
-    const index = items.findIndex((item) => item.id === req.params.id);
+    const index = items.findIndex(
+      (item: { id: string }) => item.id === req.params.id
+    );
     if (index === -1) return res.status(404).json({ error: "Not found" });
     items.splice(index, 1);
     await writeDatabase(db);
@@ -67,13 +89,5 @@ apiRouter.get("/check-update", async (req: Request, res: Response) => {
 });
 
 // Endpoint to force update
-apiRouter.get("/update-database", async (req: Request, res: Response) => {
-  try {
-    const message = await updateDatabase(true); // Force update
-    res.status(200).json({ message });
-  } catch (error) {
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
 
 export default apiRouter;

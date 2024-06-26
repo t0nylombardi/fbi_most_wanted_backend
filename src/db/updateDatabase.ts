@@ -70,7 +70,7 @@ async function updateCategoryData(
 ): Promise<any[]> {
   try {
     const data = await fetchWantedList({
-      pageSize: 20,
+      pageSize: 1000,
       page: 1,
       sort_on: "modified",
       sort_order: "desc",
