@@ -56,18 +56,14 @@ apiRouter.post("/:category", async (req: Request, res: Response) => {
   }
 });
 
-apiRouter.put("/:category/:id", async (req: Request, res: Response) => {
+apiRouter.get("/:category/:id", async (req: Request, res: Response) => {
   try {
     const db = await readDatabase();
     const items = db[req.params.category];
-    const index = items.findIndex(
-      (item: { id: string }) => item.id === req.params.id
-    );
-    if (index === -1) return res.status(404).json({ error: "Not found" });
-    const updatedItem = { ...req.body, id: req.params.id };
-    items[index] = updatedItem;
-    await writeDatabase(db);
-    res.json(updatedItem);
+    const id = req.params.id;
+    const item = items.find((item: { id: number }) => item.id === parseInt(id));
+    if (!item) return res.status(404).json({ error: "Not found" });
+    res.json(item);
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }

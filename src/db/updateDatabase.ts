@@ -42,12 +42,12 @@ async function performDatabaseUpdate(db: any): Promise<string> {
     throw new Error("Failed to update categories");
   }
 
-  // try {
-  //   updatedDb = await updateDefaultAllPages(updatedDb);
-  // } catch (error) {
-  //   console.error("Error updating default all pages:", error);
-  //   throw new Error("Failed to update default all pages");
-  // }
+  try {
+    updatedDb = await updateDefaultAllPages(updatedDb);
+  } catch (error) {
+    console.error("Error updating default all pages:", error);
+    throw new Error("Failed to update default all pages");
+  }
 
   try {
     await writeDatabase(updatedDb);
@@ -123,17 +123,17 @@ async function updateCaseOfTheWeek(db: any): Promise<any> {
   return db;
 }
 
-// async function updateDefaultAllPages(db: any): Promise<any> {
-//   const allPages = await fetchDefaultAllPages();
-//   if (!allPages) {
-//     console.error("Failed to fetch default");
-//     db.default_all_pages = [];
-//   } else {
-//     console.log("Fetched all pages");
-//     db.default_all_pages = [allPages];
-//   }
-//   return db;
-// }
+async function updateDefaultAllPages(db: any): Promise<any> {
+  const allPages = await fetchDefaultAllPages();
+  if (!allPages) {
+    console.error("Failed to fetch default");
+    db.default_all_pages = [];
+  } else {
+    console.log("Fetched all pages");
+    db.default_all_pages = allPages;
+  }
+  return db;
+}
 
 /**
  * Checks if the database is outdated and updates it if necessary.

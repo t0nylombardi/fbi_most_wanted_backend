@@ -11,8 +11,8 @@ app.use(morgan("combined"));
 
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
-    methods: ["GET", "POST", "PUT", "DELET"], // Allow specific HTTP methods
+    origin: "*", // Replace with your frontend URL
+    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
     allowedHeaders: ["Content-Type"], // Allow specific headers
   })
 );
