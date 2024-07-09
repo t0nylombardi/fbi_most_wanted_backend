@@ -1,34 +1,32 @@
-import express from "express";
+import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import apiRouter from "./api/apiRouter.js"; // Import the apiRouter
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+// Middleware setup
+app.use(cors());
 app.use(morgan("combined"));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.use(
-  cors({
-    origin: "*", // Replace with your frontend URL
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
-    allowedHeaders: ["Content-Type"], // Allow specific headers
-  })
-);
+// API Router
+app.use("/api/v1", apiRouter);
 
-// Add a simple test endpoint
-app.get("/test", (req, res) => {
-  res.status(404).json({ message: "Server is working" });
+// 404 Handler
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(404).json({ error: "Endpoint not found" });
 });
 
-// Use the API router with the /api/v1 prefix
-try {
-  app.use("/api/v1", apiRouter);
-} catch (error) {
-  console.error("Error loading the API router", error);
-}
+// Error Handler
+app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
+  console.error(err.stack);
+  res.status(500).json({ error: "Internal Server Error" });
+});
 
+// Start server
 app.listen(PORT, () => {
-  console.log(`Express server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

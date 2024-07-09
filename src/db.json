@@ -2,6 +2,31 @@
   "updatedAt": {
     "date": "2024-06-30T16:59:51.120Z"
   },
+  "users": [
+    {
+      "id": 1,
+      "name": "Rick Astley",
+      "username": "rickastley",
+      "password": "nevergonnagiveyouup",
+      "description": "",
+      "promises": [
+        "give you up",
+        "let you down",
+        "run around",
+        "desert you",
+        "make you cry",
+        "say goodbye",
+        "tell a lie",
+        "hurt you"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJpY2thc3RlcnkiLCJpYXQiOjE2MjQ5NjYwMzEsImV4cCI6MTYyNTA1MjQzMX0.1",
+      "image": {
+        "thumb": "https://cdn.apollo.audio/one/media/652e/713e/efec/a305/c252/0985/rick-astley-never-gonna-give-you-up.jpg",
+        "default": "https://people.com/thmb/FGTANCb4dNNuQvI4dpaTWZk628w=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(719x309:721x311):format(webp)/rick-astley-recreation-never-gonna-give-you-up-081922-1-909d277568c34a599c27fa7503ce7a4c.jpg"
+      },
+      "website": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    }
+  ],
   "ten_most_wanted": [
     {
       "height_min": 72,
@@ -22255,16 +22280,8 @@
       "description": "September 28, 1996\r\nLynn, Massachusetts",
       "images": [
         {
-          "thumb": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/@@images/image/thumb",
-          "original": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/@@images/image",
           "caption": "Photograph taken at Time of Disappearance",
           "large": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/@@images/image/large"
-        },
-        {
-          "thumb": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/delacruzage.jpg/@@images/image/thumb",
-          "original": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/delacruzage.jpg",
-          "caption": "Photograph Age Progressed to 31 Years Old",
-          "large": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts/delacruzage.jpg/@@images/image/large"
         }
       ],
       "path": "/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts",
@@ -22283,21 +22300,21 @@
       "eyes_raw": "Brown",
       "dates_of_birth_used": null,
       "race": "hispanic",
-      "caution": null,
+      "caution": "De la Cruz has a scar above his left eye, birthmarks on his left calf and the left side of his forehead, and his left ear is pierced",
       "weight_max": 60,
       "weight_min": 60,
       "legat_names": null,
       "field_offices": null,
       "sex": "Male",
       "languages": null,
-      "hair": "brown",
+      "hair": "red",
       "possible_states": null,
       "weight": "60 pounds (at time of disappearance)",
       "height_max": 54,
       "possible_countries": null,
       "place_of_birth": null,
       "race_raw": "White (Hispanic)",
-      "url": "https://www.fbi.gov/wanted/vicap/missing-persons/jesus-de-la-cruz---lynn-massachusetts",
+      "url": "",
       "uid": "b166d627e11149aa82c02d1533e3b650",
       "title": "JESUS DE LA CRUZ - LYNN, MASSACHUSETTS",
       "scars_and_marks": null,
@@ -22307,13 +22324,13 @@
       "additional_information": null,
       "age_min": 6,
       "reward_text": null,
-      "details": "<p>Jesus de la Cruz was last seen on September 28, 1996, walking on Park Street near his residence in Lynn, Massachusetts. He was six years old at the time of his disappearance and has not been seen since. De la Cruz has a scar above his left eye, birthmarks on his left calf and the left side of his forehead, and his left ear is pierced. He was last seen wearing a white t-shirt, blue jeans, and brown and yellow boots.</p>\r\n<p> </p>",
+      "details": "<p>Jesus de la Cruz was last seen on September 28, 1996, walking on Park Street near his residence in Lynn, Massachusetts. He was six years old at the time of his disappearance and has not been seen since. De la Cruz has a scar above his left eye, birthmarks on his left calf and the left side of his forehead, and his left ear is pierced. He was last seen wearing a white t-shirt, blue jeans, and brown and yellow boots.</p>\r\n<p> </p>",
       "age_range": "6 years old (at time of disappearance)",
       "modified": "2024-06-29T00:14:19+00:00",
       "subjects": [
         "ViCAP Missing Persons"
       ],
-      "eyes": "brown",
+      "eyes": "blue",
       "ncic": null,
       "publication": "2021-09-28T10:00:00",
       "occupations": null,
@@ -69206,7 +69223,7 @@
       ],
       "race": "asian",
       "caution": "<p>Hung Tien Pham is wanted for his alleged involvement in the execution-style murders of five men at a Chinatown social club in Boston, Massachusetts, on January 12, 1991, known locally as the Boston Chinatown Massacre.  In the early morning hours, Pham, a known associate of the Ping On crime syndicate, allegedly entered an illegal gambling den located at 85A Tyler Street in Boston, Massachusetts, and allegedly shot six men, execution-style, while they were playing cards. Of the six victims, only one survived the attack.  On January 18, 1991, a local arrest warrant was issued for Pham by the Commonwealth of Massachusetts, Suffolk County, after he was indicted by a grand jury in Suffolk County Superior Court on five counts of murder, one count of armed assault with intent to murder, one count of conspiracy, and one count of carrying a firearm without a license.  </p>\r\n<p> </p>\r\n<p>Following the massacre, Pham went to New York City, New York, and boarded a flight to Hong Kong on February 1, 1991.  A federal arrest warrant was issued for Pham by the United States District Court, District of Massachusetts, Boston, Massachusetts, on February 15, 1991, after he was charged with unlawful flight to avoid prosecution.</p>\r\n<p> </p>",
-      "weight_max": 135,
+      "weight_max": "100",
       "weight_min": 115,
       "legat_names": null,
       "field_offices": [
@@ -69218,10 +69235,10 @@
         "Chinese",
         "English"
       ],
-      "hair": "black",
+      "hair": "blackkkk",
       "possible_states": null,
       "weight": "115 to 135 pounds",
-      "height_max": 64,
+      "height_max": "44",
       "possible_countries": null,
       "place_of_birth": "Mong Cai, Quang Ninh Province, North Vietnam",
       "race_raw": "Asian",
@@ -69236,7 +69253,7 @@
       "age_min": null,
       "reward_text": "The FBI is offering a reward of up to $30,000 for information leading to the arrest and conviction of Hung Tien Pham.",
       "details": null,
-      "age_range": null,
+      "age_range": "Approximately 25 years old",
       "modified": "2024-06-29T00:00:53+00:00",
       "subjects": [
         "Violent Crime - Murders"
@@ -70063,7 +70080,7 @@
       "age_min": null,
       "reward_text": null,
       "details": null,
-      "age_range": null,
+      "age_range": "46",
       "modified": "2024-06-29T00:00:41+00:00",
       "subjects": [
         "Cyber's Most Wanted"
@@ -70405,7 +70422,7 @@
       "age_min": null,
       "reward_text": "The United States Department of State’s Transnational Organized Crime Rewards Program is offering a reward of up to $7 million for information leading to the arrest and/or conviction of Artem Aleksandrovich Uss.",
       "details": null,
-      "age_range": null,
+      "age_range": "Approximately 25 years old",
       "modified": "2024-06-29T00:00:37+00:00",
       "subjects": [
         "Counterintelligence"
@@ -70630,7 +70647,7 @@
       "hair": "brown",
       "possible_states": null,
       "weight": "175 pounds",
-      "height_max": 69,
+      "height_max": "69444",
       "possible_countries": null,
       "place_of_birth": "Naghadeh, Iran",
       "race_raw": "White",
@@ -70645,7 +70662,7 @@
       "age_min": null,
       "reward_text": null,
       "details": null,
-      "age_range": null,
+      "age_range": "46",
       "modified": "2024-06-29T00:00:32+00:00",
       "subjects": [
         "Cyber's Most Wanted"
@@ -71032,7 +71049,7 @@
       "age_min": null,
       "reward_text": null,
       "details": null,
-      "age_range": null,
+      "age_range": "46",
       "modified": "2024-06-29T00:00:29+00:00",
       "subjects": [
         "Criminal Enterprise Investigations"
@@ -71098,7 +71115,7 @@
       "weight": null,
       "height_max": null,
       "possible_countries": null,
-      "place_of_birth": null,
+      "place_of_birth": "California",
       "race_raw": "White",
       "url": "https://www.fbi.gov/wanted/cyber/oleg-mikhaylovich-sotnikov",
       "uid": "15c201334f5944e7b960f28998f30c22",
@@ -71111,7 +71128,7 @@
       "age_min": null,
       "reward_text": null,
       "details": "<p>On October 3, 2018, a federal grand jury sitting in the Western District of Pennsylvania returned an indictment against <a data-val=\"https://www.fbi.gov/wanted/cyber/gru-hacking-to-undermine-anti-doping-efforts\" href=\"https://www.fbi.gov/wanted/cyber/gru-hacking-to-undermine-anti-doping-efforts\" data-linktype=\"external\" data-urltype=\"/view\">7 Russian individuals</a> for their alleged roles in hacking and related influence and disinformation operations targeting, among others, international anti-doping agencies, sporting federations, and anti-doping officials. The indictment charges Oleg Mikhaylovich Sotnikov, <a data-val=\"https://www.fbi.gov/wanted/cyber/evgenii-mikhaylovich-serebriakov\" href=\"https://www.fbi.gov/wanted/cyber/evgenii-mikhaylovich-serebriakov\" data-linktype=\"external\" data-urltype=\"/view\">Evgenii Mikhaylovich Serebriakov</a>, <a data-val=\"https://www.fbi.gov/wanted/cyber/aleksei-sergeyevich-morenets\" href=\"https://www.fbi.gov/wanted/cyber/aleksei-sergeyevich-morenets\" data-linktype=\"external\" data-urltype=\"/view\">Aleksei Sergeyevich Morenets</a>, <a data-val=\"https://www.fbi.gov/wanted/cyber/ivan-sergeyevich-yermakov\" href=\"https://www.fbi.gov/wanted/cyber/ivan-sergeyevich-yermakov\" data-linktype=\"external\" data-urltype=\"/view\">Ivan Sergeyevich Yermakov</a>, <a data-val=\"https://www.fbi.gov/wanted/cyber/artem-andreyevich-malyshev\" href=\"https://www.fbi.gov/wanted/cyber/artem-andreyevich-malyshev\" data-linktype=\"external\" data-urltype=\"/view\">Artem Andreyevich Malyshev</a>, <a data-val=\"https://www.fbi.gov/wanted/cyber/dmitriy-sergeyevich-badin\" href=\"https://www.fbi.gov/wanted/cyber/dmitriy-sergeyevich-badin\" data-linktype=\"external\" data-urltype=\"/view\">Dmitriy Sergeyevich Badin</a>, and <a data-val=\"https://www.fbi.gov/wanted/cyber/alexey-valerevich-minin\" href=\"https://www.fbi.gov/wanted/cyber/alexey-valerevich-minin\" data-linktype=\"external\" data-urltype=\"/view\">Alexey Valerevich Minin </a>with computer hacking activity spanning from 2014 through May of 2018, including the computer intrusions of the United States Anti-Doping Agency (USADA), the World Anti-Doping Agency (WADA), and other victim entities during the 2016 Summer Olympics and Paralympics and afterwards.  The indictment charges these defendants with conspiracy to commit computer fraud, conspiracy to commit wire fraud, wire fraud, aggravated identity theft, and conspiracy to commit money laundering. The United States District Court for the Western District of Pennsylvania in Pittsburgh, Pennsylvania, issued a federal arrest warrant for each of these defendants upon the grand jury’s return of the indictment.</p>\r\n<p> </p>",
-      "age_range": null,
+      "age_range": "46",
       "modified": "2024-06-29T00:00:28+00:00",
       "subjects": [
         "Cyber's Most Wanted"
@@ -71164,7 +71181,7 @@
       "dates_of_birth_used": [
         "May 26, 2002"
       ],
-      "race": "hispanic",
+      "race": "something",
       "caution": "<p>Nery Alvarado Alvarado is wanted for his alleged involvement in a scheme to smuggle fentanyl, methamphetamine and heroin from Mexico into the United States – narcotics that allegedly were packed into fire extinguishers and concealed in scrap metal loads.</p>\r\n<p> </p>\r\n<p>On December 21, 2023, a federal arrest warrant was issued for Nery Alvarado Alvarado in the United States District Court, Central District of California, Los Angeles, California, after he was charged with conspiracy to distribute and to possess with intent to distribute controlled substances.</p>",
       "weight_max": 140,
       "weight_min": 140,
@@ -71174,7 +71191,7 @@
       ],
       "sex": "Male",
       "languages": null,
-      "hair": "black",
+      "hair": "hair203x2x",
       "possible_states": null,
       "weight": "140 pounds",
       "height_max": 66,
@@ -71192,12 +71209,12 @@
       "age_min": null,
       "reward_text": null,
       "details": null,
-      "age_range": null,
+      "age_range": "Approximately 25 years old",
       "modified": "2024-06-29T00:00:27+00:00",
       "subjects": [
         "Criminal Enterprise Investigations"
       ],
-      "eyes": "brown",
+      "eyes": "purple",
       "ncic": null,
       "publication": "2024-02-23T08:39:00",
       "occupations": null,
@@ -71206,89 +71223,6 @@
       "build": null,
       "@id": "https://api.fbi.gov/@wanted-person/be36269c18734261a564086366542b11",
       "id": "55534c6a-1665-4793-84f1-59bb799db3a8"
-    },
-    {
-      "height_min": null,
-      "complexion": null,
-      "suspects": null,
-      "reward_max": 0,
-      "age_max": 19,
-      "description": "Conspiracy to Commit Intentional Damage to a Protected Computer; Intentional Damage to a Protected Computer",
-      "images": [
-        {
-          "thumb": "https://www.fbi.gov/wanted/cyber/behzad-mohammadzadeh/@@images/image/thumb",
-          "original": "https://www.fbi.gov/wanted/cyber/behzad-mohammadzadeh/@@images/image",
-          "caption": null,
-          "large": "https://www.fbi.gov/wanted/cyber/behzad-mohammadzadeh/@@images/image/large"
-        }
-      ],
-      "path": "/wanted/cyber/behzad-mohammadzadeh",
-      "aliases": [
-        "“Mrb3hz4d”"
-      ],
-      "locations": null,
-      "coordinates": [],
-      "nationality": null,
-      "poster_classification": "default",
-      "remarks": null,
-      "files": [
-        {
-          "url": "https://www.fbi.gov/wanted/cyber/behzad-mohammadzadeh/download.pdf",
-          "name": "English"
-        },
-        {
-          "url": "https://www.fbi.gov/wanted/cyber/behzad-mohammadzadeh/mohammadzadehfarsi.pdf/@@download/file/Mohammadzadehfarsi.pdf",
-          "name": "  "
-        },
-        {
-          "url": "https://www.fbi.gov/wanted/cyber/behzad-mohammadzadeh/mohammadzadeharabic.pdf/@@download/file/MohammadzadehArabic.pdf",
-          "name": " "
-        }
-      ],
-      "eyes_raw": "Brown",
-      "dates_of_birth_used": null,
-      "race": "white",
-      "caution": "<p>Behzad Mohammadzadeh and <a data-val=\"https://www.fbi.gov/wanted/cyber/marwan-abusrour\" data-linktype=\"external\" href=\"https://www.fbi.gov/wanted/cyber/marwan-abusrour\" data-urltype=\"/view\">Marwan Abusrour</a> are wanted for their alleged involvement in criminal activities to include defacing public websites around the world with pro-Iranian and pro-hacker messages.  Mohammadzadeh allegedly defaced more than 1100 websites around the world with pro-Iranian and pro-hacker messages, which he began no later than on or about September 4, 2018, and has continued through the present day.  He is also alleged to have transmitted computer code to approximately 51 websites hosted in the United States, and defaced those websites by replacing their content with pictures of the late General Soleimani against a background of the Iranian flag, along with the message, “Down with America.”  On September 3, 2020, a grand jury in the United States District Court, District of Massachusetts, indicted Mohammadzadeh and Abusrour, and federal arrest warrants were issued for them after they were charged with Conspiracy to Commit Intentional Damage to a Protected Computer and Intentional Damage to a Protected Computer.</p>\r\n<p> </p>",
-      "weight_max": null,
-      "weight_min": null,
-      "legat_names": null,
-      "field_offices": [
-        "boston"
-      ],
-      "sex": "Male",
-      "languages": null,
-      "hair": "brown",
-      "possible_states": null,
-      "weight": null,
-      "height_max": null,
-      "possible_countries": null,
-      "place_of_birth": null,
-      "race_raw": "White",
-      "url": "https://www.fbi.gov/wanted/cyber/behzad-mohammadzadeh",
-      "uid": "3fb348cb7d0b406995f9803537b1a4a9",
-      "title": "BEHZAD MOHAMMADZADEH",
-      "scars_and_marks": null,
-      "reward_min": 0,
-      "person_classification": "Main",
-      "warning_message": null,
-      "additional_information": null,
-      "age_min": 19,
-      "reward_text": null,
-      "details": null,
-      "age_range": "Approximately 19 years old",
-      "modified": "2024-06-29T00:00:25+00:00",
-      "subjects": [
-        "Cyber's Most Wanted"
-      ],
-      "eyes": "brown",
-      "ncic": null,
-      "publication": "2020-09-10T07:35:00",
-      "occupations": null,
-      "hair_raw": "Brown",
-      "status": "na",
-      "build": null,
-      "@id": "https://api.fbi.gov/@wanted-person/3fb348cb7d0b406995f9803537b1a4a9",
-      "id": "4f145443-9aa4-42a0-97c0-7e43c0a0f872"
     },
     {
       "height_min": 58,
@@ -71328,10 +71262,10 @@
       "field_offices": null,
       "sex": "Female",
       "languages": null,
-      "hair": "brown",
+      "hair": "brownccx",
       "possible_states": null,
       "weight": "110 pounds",
-      "height_max": 58,
+      "height_max": "587",
       "possible_countries": null,
       "place_of_birth": null,
       "race_raw": "White",

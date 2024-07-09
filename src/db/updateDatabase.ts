@@ -106,23 +106,6 @@ async function updateAllCategories(): Promise<Record<string, any[]>> {
   return updatedData;
 }
 
-/**
- * Updates the case of the week in the database as a single element in an array.
- * @param db - The current database state.
- * @returns The updated database state with the case of the week included as an array.
- */
-async function updateCaseOfTheWeek(db: any): Promise<any> {
-  console.log("Fetching Case of the Week...");
-  const caseOfTheWeek = await fetchCaseOfTheWeek();
-  if (caseOfTheWeek) {
-    db.case_of_the_week = [caseOfTheWeek];
-  } else {
-    console.log("Case of the Week not found");
-    db.case_of_the_week = [];
-  }
-  return db;
-}
-
 async function updateDefaultAllPages(db: any): Promise<any> {
   const allPages = await fetchDefaultAllPages();
   if (!allPages) {
